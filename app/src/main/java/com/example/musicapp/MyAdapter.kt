@@ -7,11 +7,11 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+    class ViewHolder(intView: View): RecyclerView.ViewHolder(intView) {
         val textView: TextView
 
         init {
-            textView = view.findViewById(R.id.helloText)
+            textView = intView.findViewById(R.id.helloText)
         }
     }
 
