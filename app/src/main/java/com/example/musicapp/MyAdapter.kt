@@ -9,11 +9,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+
     class ViewHolder(intView: View): RecyclerView.ViewHolder(intView) {
-        val image: ImageView
-        val title: TextView
-        val play: ImageButton
-        val pause: ImageButton
+        private val image: ImageView
+        private val title: TextView
+        private val play: ImageButton
+        private val pause: ImageButton
 
         init {
             image = intView.findViewById(R.id.cover)
