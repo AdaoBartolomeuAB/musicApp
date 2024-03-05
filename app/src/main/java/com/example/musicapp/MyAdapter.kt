@@ -3,15 +3,23 @@ package com.example.musicapp
 import android.app.Activity
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
     class ViewHolder(intView: View): RecyclerView.ViewHolder(intView) {
-        val textView: TextView
+        val image: ImageView
+        val title: TextView
+        val play: ImageButton
+        val pause: ImageButton
 
         init {
-            textView = intView.findViewById(R.id.helloText)
+            image = intView.findViewById(R.id.cover)
+            title = intView.findViewById(R.id.tVMusicTitle)
+            play = intView.findViewById(R.id.btnPlay)
+            pause = intView.findViewById(R.id.btnPause)
         }
     }
 
