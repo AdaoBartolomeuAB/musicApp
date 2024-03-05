@@ -1,6 +1,7 @@
 package com.example.musicapp
 
 import android.app.Activity
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
@@ -10,29 +11,31 @@ import androidx.recyclerview.widget.RecyclerView
 
 class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
 
-    class ViewHolder(intView: View): RecyclerView.ViewHolder(intView) {
-        private val image: ImageView
-        private val title: TextView
-        private val play: ImageButton
-        private val pause: ImageButton
+    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        val image: ImageView
+        val title: TextView
+        val play: ImageButton
+        val pause: ImageButton
 
         init {
-            image = intView.findViewById(R.id.cover)
-            title = intView.findViewById(R.id.tVMusicTitle)
-            play = intView.findViewById(R.id.btnPlay)
-            pause = intView.findViewById(R.id.btnPause)
+            image = itemView.findViewById(R.id.cover)
+            title = itemView.findViewById(R.id.tVMusicTitle)
+            play = itemView.findViewById(R.id.btnPlay)
+            pause = itemView.findViewById(R.id.btnPause)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO("Not yet implemented")
+        val itemView = LayoutInflater.from(context).inflate(R.layout.each_item,parent,false)
+        return ViewHolder(itemView)
     }
 
     override fun getItemCount(): Int {
-        TODO("Not yet implemented")
+        return dataList.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO("Not yet implemented")
+        val currentData = dataList[position]
+        holder.title.text = currentData.data.get(position).title
     }
 }
