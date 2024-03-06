@@ -8,8 +8,9 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 
-class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
+class MyAdapter(val context: Activity, val dataList: List<Data>): RecyclerView.Adapter<MyAdapter.ViewHolder>(){
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val image: ImageView
@@ -36,6 +37,7 @@ class MyAdapter(val context: Activity, val dataList: List<MyData>): RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentData = dataList[position]
-        holder.title.text = currentData.data.get(position).title
+        holder.title.text = currentData.title
+        Picasso.get().load(currentData.album.cover).into(holder.image)
     }
 }
