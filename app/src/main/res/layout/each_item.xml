@@ -24,7 +24,7 @@
                 android:id="@+id/cover"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@tools:sample/avatars"/>
+                android:src="@android:drawable/presence_video_away" />
 
             <TextView
                 android:id="@+id/tVMusicTitle"
@@ -38,7 +38,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@android:drawable/btn_star"
+                android:src="@android:drawable/ic_media_play"
                 tools:src="@android:drawable/ic_media_play" />
 
 
@@ -47,7 +47,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:src="@android:drawable/btn_star"
+                android:src="@android:drawable/ic_media_pause"
                 tools:src="@android:drawable/ic_media_pause" />
 
 
